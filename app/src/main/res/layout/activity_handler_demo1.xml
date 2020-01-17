@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/handler1_textView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_handler1_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/btn_handler1_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="End"/>
+
+
+</LinearLayout>

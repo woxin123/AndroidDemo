@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".audio_and_video_demo.AudioAndVideoMenuActivity">
+
+    <Button
+        android:id="@+id/btn_audio_and_video_audio_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/audio_play"/>
+
+    <Button
+        android:id="@+id/btn_audio_and_video_video_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/video_play" />
+
+    <Button
+        android:id="@+id/btn_audio_and_video_audio_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="录制音频" />
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".storage_demo.content_provider_demo.ContentProviderDemoActivity">
+
+
+    <Button
+        android:id="@+id/btn_storage_content_provider_demo_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add To Book"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_content_provider_demo_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Query Fropm Book"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_content_provider_demo_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Book"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_content_provider_demo_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete From Book"
+        android:textAllCaps="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/storage_content_provider_demo_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+</LinearLayout>

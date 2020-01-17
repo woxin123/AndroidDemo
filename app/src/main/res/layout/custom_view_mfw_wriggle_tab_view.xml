@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:id="@+id/sv_tab"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+            <com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWriggleIndicator
+                android:id="@+id/mfw_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_light" />
+
+</com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab>

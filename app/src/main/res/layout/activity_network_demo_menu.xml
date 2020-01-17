@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_network_httpClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="HttpClient" />
+
+    <Button
+        android:id="@+id/btn_network_http_url_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="HttpURLConnection" />
+
+    <Button
+        android:id="@+id/btn_network_okhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="同步 OkHttp" />
+
+    <Button
+        android:id="@+id/btn_network_async_okhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="异步 OkHttp" />
+
+    <Button
+        android:id="@+id/btn_network_retrofit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/network_retrofit2" />
+
+</LinearLayout>

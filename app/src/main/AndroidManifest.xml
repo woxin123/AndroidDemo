@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androiddemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui_demo.surface_demo.SurfaceViewActivity"></activity>
+        <activity android:name=".customer_view_demo.slide_conflict_demo.SlideConflictDemo2Activity" />
+
+        <receiver android:name=".customer_view_demo.slide_conflict_demo.customviews.NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+
+        <activity android:name=".customer_view_demo.slide_conflict_demo.SlideConflictDemo1Activity" />
+        <activity android:name=".other_demo.OtherDemoActivity" />
+        <activity android:name=".architecture_demo.glide_demo.GlideDemoActivity" />
+        <activity android:name=".jetpack_demo.LiveDataActivity" />
+        <activity android:name=".handler_demo.HandlerInThreadActivity" />
+        <activity android:name=".jetpack_demo.navigation.NavigationActivity" />
+        <activity android:name=".customer_view_demo.CustomDetailActivity" />
+        <activity android:name=".customer_view_demo.CustomViewDetialListActivity" />
+        <activity android:name=".customer_view_demo.CustomViewMenuActivity" />
+        <activity android:name=".customer_view_demo.CounterViewActivity" />
+        <activity android:name=".activity_demo.moniter_demo.ActivityAndAppMonitorActivity" />
+        <activity android:name=".ipc_demo.aidl.BookManagerActivity" /> <!-- ipc -->
+        <activity android:name=".ipc_demo.IPCDemoActivity" /> <!-- android:process=":remote" 的进程名是 包名:remote，也就是 com.example.androiddemo:remote -->
+        <activity
+            android:name=".ipc_demo.IPCSecondActivity"
+            android:process=":remote" />
+        <activity
+            android:name=".ipc_demo.IPCThirdActivity"
+            android:process="com.example.androiddemo.remote" /> <!-- Message Service -->
+        <service
+            android:name=".ipc_demo.messenger.MessengerService"
+            android:process=":remote" />
+
+        <activity android:name=".ipc_demo.messenger.MessengerActivity" />
+
+        <service
+            android:name=".ipc_demo.aidl.BookManagerService"
+            android:process=":remote" /> <!-- ipc -->
+        <!-- android:configChanges  属性可以设置当某些参数改变时 Activity 不重启，例如 orientation 屏幕方向发生改变 -->
+        <activity
+            android:name=".activity_demo.ActivityRestartActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTask" />
+        <activity android:name=".jetpack_demo.DataBindingActivity" />
+        <activity android:name=".jetpack_demo.OrdinaryActivityLifecycleActivity" />
+        <activity android:name=".jetpack_demo.LifecycleActivity" />
+        <activity android:name=".jetpack_demo.JetPackDemoActivity" />
+        <activity android:name=".network_demo.RetrofitDemoActivity" />
+        <activity android:name=".activity_demo.ActivityCommunicationNextActivity" />
+        <activity android:name=".activity_demo.ActivityCommunicationActivity" />
+        <activity android:name=".activity_demo.ActivityDemoActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".test_demo.EventBusTestDemoActivity" />
+        <activity android:name=".test_demo.TestDemoActivity" />
+        <activity android:name=".architecture_demo.mvvm.ChangeAgeActivity" />
+        <activity android:name=".architecture_demo.mvp.LoginActivity" />
+        <activity android:name=".architecture_demo.ArchitectureMenuActivity" />
+        <activity android:name=".architecture_demo.mvc.LoadDataActivity" />
+        <activity android:name=".service_demo.download.DownloadServiceActivity" />
+
+        <service
+            android:name=".service_demo.MyIntentService"
+            android:exported="false" />
+
+        <activity android:name=".service_demo.MyServiceActivity" />
+
+        <service
+            android:name=".service_demo.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".service_demo.download.DownloadService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".audio_and_video_demo.AudioRecordActivity" />
+        <activity android:name=".audio_and_video_demo.VideoPlayActivity" />
+        <activity android:name=".audio_and_video_demo.AudioPlayActivity" />
+        <activity android:name=".audio_and_video_demo.AudioAndVideoMenuActivity" />
+        <activity android:name=".storage_demo.content_provider_demo.ContentProviderDemoActivity" />
+        <activity android:name=".storage_demo.content_provider_demo.ContentProviderDemoMenuActivity" />
+        <activity android:name=".storage_demo.content_provider_demo.ReadContactDemoActivity" />
+
+        <provider
+            android:name=".storage_demo.BookContentProvider"
+            android:authorities="top.mcwebsite.storage.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".storage_demo.DataBaseDemoActivity" />
+        <activity android:name=".storage_demo.SharedPreferenceActivity" />
+        <activity android:name=".storage_demo.StorageDemoMenuActivity" />
+        <activity android:name=".network_demo.NetWorkAsyncOKHttpActivity" />
+        <activity android:name=".network_demo.NetWorkHttpClientActivity" />
+        <activity android:name=".handler_demo.HandlerDemo2Activity" />
+        <activity android:name=".handler_demo.HandlerDemo1Activity" />
+        <activity android:name=".handler_demo.HandlerDemoMenuActivity" />
+        <activity android:name=".network_demo.NetworkDemoMenuActivity" />
+        <activity android:name=".ui_demo.view_pager_demo.ViewPagerAndTableLayoutActivity" />
+        <activity android:name=".ui_demo.UIActivity" />
+        <activity android:name=".ui_demo.view_pager_demo.ViewPagerActivity" />
+        <activity android:name=".animation_demo.LottieAnimationActivity" />
+        <activity android:name=".animation_demo.ActivitySwitchFadeInOutActivity" />
+        <activity android:name=".animation_demo.ActivitySwitchAnimActivity" />
+        <activity android:name=".animation_demo.SimpleAnimationScaleActivity" />
+        <activity android:name=".animation_demo.AnimationMenuActivity" />
+        <activity android:name=".animation_demo.SimpleAnimationActivity" />
+        <activity android:name=".recyclerview_demo.SimpleRecyclerViewActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 解决 java.lang.NoClassDefFoundError: Failed resolution of: Lorg/apache/http/client/methods/HttpGet; -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

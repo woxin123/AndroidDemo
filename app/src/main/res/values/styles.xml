@@ -1,0 +1,18 @@
+<resources>
+
+    <!--
+    Theme.AppCompat.Light.DarkActionBar  一个深色的 ActionBar 主题
+
+    不带 ActionBar 的主题有:
+    - Theme.AppCompat.NoActionBar       深色主题，界面的整体颜色设置成黑色，陪衬颜色设成淡色
+    - Theme.AppCompat.Light.NoActionBar 表示淡色主题，它会将界面的主体颜色设成淡色，陪衬颜色设成深色
+    -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

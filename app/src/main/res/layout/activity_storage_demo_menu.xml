@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".storage_demo.StorageDemoMenuActivity">
+
+    <Button
+        android:id="@+id/btn_storage_share_preference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharePreference"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_data_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DataBase"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_content_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Context Provider" />
+
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/view_pager_top_ly"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/view_pager_textView1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="#999999"
+            android:gravity="center"
+            android:text="页面1"
+            android:textColor="#222222" />
+
+        <TextView
+            android:id="@+id/view_pager_textView2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="#999999"
+            android:gravity="center"
+            android:text="页面2"
+            android:textColor="#222222" />
+
+        <TextView
+            android:id="@+id/view_pager_textView3"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="#999999"
+            android:gravity="center"
+            android:text="页面3"
+            android:textColor="#222222" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/view_pager_cursor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_pager_top_ly"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_pager_cursor" />
+
+
+</RelativeLayout>

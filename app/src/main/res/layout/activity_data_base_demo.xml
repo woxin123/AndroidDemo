@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".storage_demo.DataBaseDemoActivity">
+
+    <Button
+        android:id="@+id/btn_storage_data_base_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create DataBase"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_data_base_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Data"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_data_base_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Data"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_data_base_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Data"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_storage_data_base_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Query Data"
+        android:textAllCaps="false" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/storage_data_base_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+</LinearLayout>

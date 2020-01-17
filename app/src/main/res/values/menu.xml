@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity">Activity Demo</string>
+    <string name="network">网络</string>
+    <string name="recyclerView">RecyclerView</string>
+    <string name="animation">动画</string>
+    <string name="ui">UI</string>
+    <string name="audio_and_video">音视频</string>
+    <string name="storage">存储</string>
+    <string name="handler">Handler</string>
+    <string name="video_play">视频播放</string>
+    <string name="audio_play">音频播放</string>
+    <string name="service_start">Start Service</string>
+    <string name="service_stop">Stop Service</string>
+    <string name="service_bind">Bind Service</string>
+    <string name="service_unbind">Unbind Service</string>
+    <string name="intent_service_start">Start IntentService</string>
+    <string name="service">Service</string>
+    <string name="other_demo">Other Demo</string>
+
+    <!-- Activity -->
+    <string name="activity_communication">Activity 间通信</string>
+    <string name="activity_restart">Activity 重启</string>
+    <string name="activity_restart_self">启动自己</string>
+    <!-- Activity -->
+
+    <!-- main -->
+    <string name="jet_pack">JetPack Demo</string>
+    <string name="ipc">IPC 机制</string>
+    <!-- main -->
+
+    <!-- network -->
+    <string name="network_retrofit2">Retrofit2</string>
+    <string name="get">Get</string>
+    <string name="get_all">GetAll</string>
+    <string name="post">Add</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <!-- network -->
+
+    <!-- ipc 机制 -->
+    <string name="ipc_button1">open Activity B</string>
+    <string name="ipc_button2">open Activity C</string>
+    <string name="ipc_second_activity">Activity B</string>
+    <string name="ipc_button3">open Activity A</string>
+    <string name="ipc_third_activity">Activity C</string>
+    <string name="ipc_messenger">Messenger</string>
+    <string name="ipc_book_manager">BookManager</string>
+    <!-- ipc 机制 -->
+
+    <!-- customer view -->
+    <string name="customer_view">自定义 View</string>
+    <!-- customer view -->
+
+</resources>

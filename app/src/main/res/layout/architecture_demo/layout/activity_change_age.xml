@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.androiddemo.architecture_demo.mvvm.ChangeAgeViewModel" />
+
+        <variable
+            name="buttonname"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+
+        <TextView
+            android:id="@+id/architecture_mvvm_mvvm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年龄"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/architecture_mvvm_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{viewModel.age}" />
+
+        <Button
+            android:id="@+id/btn_architecture_mvvm_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{buttonname}" />
+
+    </LinearLayout>
+
+</layout>
