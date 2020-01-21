@@ -2,6 +2,7 @@ package com.example.androiddemo.phone_about
 
 import android.content.Context
 import android.graphics.Point
+import android.util.Log
 import android.view.Display
 import android.view.WindowManager
 
@@ -25,6 +26,21 @@ object ScreenUtil {
         val resources = context.resources
         val resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android")
         return resources.getDimensionPixelSize(resourceId)
+    }
+
+    fun getScreenSizeWithDp(context: Context): Pair<Int, Int> {
+        return Pair(context.resources.configuration.screenWidthDp,
+            context.resources.configuration.screenHeightDp)
+    }
+
+    fun dip2px(context: Context, dpValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
+        return (dpValue * scale + 0.5F).toInt()
+    }
+
+    fun px2dip(context: Context, pxValue: Float): Int {
+        val scale = context.resources.displayMetrics.density
+        return (pxValue / scale + 0.5F).toInt()
     }
 
 }

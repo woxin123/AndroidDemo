@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MyApplication"
@@ -18,18 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui_demo.surface_demo.SurfaceViewActivity"></activity>
+        <activity android:name=".audio_and_video_demo.take_photo.TakePhotoActivity"></activity>
+        <activity android:name=".ui_demo.surface_demo.SurfaceViewActivity" />
         <activity android:name=".customer_view_demo.slide_conflict_demo.SlideConflictDemo2Activity" />
-
-        <receiver android:name=".customer_view_demo.slide_conflict_demo.customviews.NewAppWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/new_app_widget_info" />
-        </receiver>
 
         <activity android:name=".customer_view_demo.slide_conflict_demo.SlideConflictDemo1Activity" />
         <activity android:name=".other_demo.OtherDemoActivity" />

@@ -13,10 +13,13 @@ object PhoneAboutSetting {
         val (width, height) = ScreenUtil.getScreenSize(activity)
         val statusHeight = ScreenUtil.getStatusBarHeight(activity)
         val navigationHeight = ScreenUtil.getNavigationBarHeight(activity)
-        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_width).append(width.toString())
-        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_height).append(height.toString())
+        val (widthDp, heightDp) = ScreenUtil.getScreenSizeWithDp(activity)
+        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_width).append(width.toString() + "px")
+        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_height).append(height.toString() + "px")
         ViewCompat.requireViewById<TextView>(view, R.id.tv_status_bar_width).append(statusHeight.toString())
         ViewCompat.requireViewById<TextView>(view, R.id.tv_navigation_bar_height).append(navigationHeight.toString())
+        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_width_dp).append(widthDp.toString() + "dp")
+        ViewCompat.requireViewById<TextView>(view, R.id.tv_phone_height_dp).append(heightDp.toString() + "dp")
     }
 
 }

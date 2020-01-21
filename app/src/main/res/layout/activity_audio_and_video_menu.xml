@@ -28,4 +28,10 @@
         android:textAllCaps="false"
         android:text="录制音频" />
 
+    <Button
+        android:id="@+id/btn_audio_and_video_take_picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拍照" />
+
 </LinearLayout>
