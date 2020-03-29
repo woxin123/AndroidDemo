@@ -4,12 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.PhoneAccount
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable
 import androidx.appcompat.widget.Toolbar
 import butterknife.BindView
@@ -25,7 +23,7 @@ import com.example.androiddemo.jetpack_demo.JetPackDemoActivity
 import com.example.androiddemo.network_demo.NetworkDemoMenuActivity
 import com.example.androiddemo.other_demo.OtherDemoActivity
 import com.example.androiddemo.phone_about.PhoneAboutSetting
-import com.example.androiddemo.recyclerview_demo.SimpleRecyclerViewActivity
+import com.example.androiddemo.recyclerview_demo.refresh_load.CustomRefreshActivity
 import com.example.androiddemo.service_demo.MyServiceActivity
 import com.example.androiddemo.storage_demo.StorageDemoMenuActivity
 import com.example.androiddemo.test_demo.TestDemoActivity
@@ -91,7 +89,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_activity -> Intent(this, ActivityDemoActivity::class.java)
             R.id.btn_recyclerView -> {
-                Intent(this, SimpleRecyclerViewActivity::class.java)
+                Intent(this, CustomRefreshActivity::class.java)
             }
             R.id.btn_animation -> {
                 Intent(this, AnimationMenuActivity::class.java)

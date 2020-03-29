@@ -30,5 +30,9 @@ class SimpleStringAdapter(private val context: Context, private val list: Mutabl
         return list.size
     }
 
+    fun add(str: String) {
+        list.add(str)
+        notifyItemChanged(list.size)
+    }
 
 }

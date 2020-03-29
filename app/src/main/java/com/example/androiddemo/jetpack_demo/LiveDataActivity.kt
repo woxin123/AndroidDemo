@@ -10,7 +10,7 @@ import androidx.lifecycle.Transformations
 import com.example.androiddemo.R
 import kotlinx.android.synthetic.main.activity_live_data.*
 
-class LiveDataActivity : AppCompatActivity(), View.OnClickListener {
+class  LiveDataActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         const val TAG = "LiveDataActivity"
