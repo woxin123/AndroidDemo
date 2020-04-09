@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab xmlns:android="http://schemas.android.com/apk/res/android"
+<online.mengchen.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -20,7 +20,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" />
 
-            <com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWriggleIndicator
+            <online.mengchen.androiddemo.customer_view_demo.customviews.mafengwo.MFWriggleIndicator
                 android:id="@+id/mfw_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,4 +36,4 @@
         android:layout_height="match_parent"
         android:background="@android:color/holo_blue_light" />
 
-</com.example.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab>
+</online.mengchen.androiddemo.customer_view_demo.customviews.mafengwo.MFWWriggleTab>

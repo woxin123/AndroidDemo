@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="book_name_hint">book name</string>
+    <string name="author_hint">author</string>
+    <string name="price_hint">Price</string>
+    <string name="save">Save</string>
+</resources>

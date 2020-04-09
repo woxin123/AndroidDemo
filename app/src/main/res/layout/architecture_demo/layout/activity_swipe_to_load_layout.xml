@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".recyclerview_demo.refresh_load.CustomRefreshActivity">
 
-    <com.example.androiddemo.recyclerview_demo.refresh_load.CustomRefreshHeadView
+    <online.mengchen.androiddemo.recyclerview_demo.refresh_load.CustomRefreshHeadView
         android:id="@id/swipe_refresh_header"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     
-    <com.example.androiddemo.recyclerview_demo.refresh_load.LoadMoreFooterView
+    <online.mengchen.androiddemo.recyclerview_demo.refresh_load.LoadMoreFooterView
         android:id="@+id/swipe_load_more_footer"
         android:layout_width="match_parent"
         android:layout_height="100dp" />

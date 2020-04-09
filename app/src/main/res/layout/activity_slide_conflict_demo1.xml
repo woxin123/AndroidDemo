@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".customer_view_demo.slide_conflict_demo.SlideConflictDemo1Activity">
 
-    <com.example.androiddemo.customer_view_demo.slide_conflict_demo.customviews.HorizontalScrollViewEx
+    <online.mengchen.androiddemo.customer_view_demo.slide_conflict_demo.customviews.HorizontalScrollViewEx
         android:id="@+id/container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

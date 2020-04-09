@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.androiddemo.architecture_demo.mvvm.ChangeAgeViewModel" />
+            type="online.mengchen.androiddemo.architecture_demo.mvvm.ChangeAgeViewModel" />
 
         <variable
             name="buttonname"

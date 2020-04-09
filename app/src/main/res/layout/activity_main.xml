@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.androiddemo.MyDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<online.mengchen.androiddemo.MyDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
@@ -163,4 +163,4 @@
 
     <include layout="@layout/fragment_phone_about"
         android:id="@+id/phone_about" />
-</com.example.androiddemo.MyDrawerLayout>
+</online.mengchen.androiddemo.MyDrawerLayout>

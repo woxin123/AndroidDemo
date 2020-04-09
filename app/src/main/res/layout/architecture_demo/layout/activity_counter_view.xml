@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".customer_view_demo.CounterViewActivity">
 
-    <com.example.androiddemo.customer_view_demo.customviews.practise.CounterView
+    <online.mengchen.androiddemo.customer_view_demo.customviews.practise.CounterView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerInParent="true" />

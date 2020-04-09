@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/page1Fragment"
-        android:name="com.example.androiddemo.jetpack_demo.navigation.MyPage1Fragment"
+        android:name="online.mengchen.androiddemo.jetpack_demo.navigation.MyPage1Fragment"
         android:label="fragment_page1"
         tool:layout="@layout/fragment_my_page1">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/page2Fragment"
-        android:name="com.example.androiddemo.jetpack_demo.navigation.MyPage2Fragment"
+        android:name="online.mengchen.androiddemo.jetpack_demo.navigation.MyPage2Fragment"
         android:label="fragment_page2"
         tool:layout="@layout/fragment_my_page2">
         <action
@@ -35,7 +35,7 @@
         app:startDestination="@id/page3Fragment">
         <fragment
             android:id="@+id/page3Fragment"
-            android:name="com.example.androiddemo.jetpack_demo.navigation.MyPage3Fragment"
+            android:name="online.mengchen.androiddemo.jetpack_demo.navigation.MyPage3Fragment"
             android:label="fragment_page3"
             tool:layout="@layout/fragment_my_page3" />
     </navigation>

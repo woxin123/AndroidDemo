@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.androiddemo.customer_view_demo.customviews.practise.TestButton
+    <online.mengchen.androiddemo.customer_view_demo.customviews.practise.TestButton
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#000000"
