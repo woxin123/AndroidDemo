@@ -8,9 +8,11 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.observe
 import com.example.kotlin_coroutine.R
+import com.example.kotlin_coroutine.api.GitUser
 import com.example.kotlin_coroutine.download.DownloadStatus
 import com.example.kotlin_coroutine.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.coroutines.launch
 import splitties.alertdialog.appcompat.alert
 import splitties.alertdialog.appcompat.alertDialog
@@ -83,6 +85,16 @@ class MainActivity : AppCompatActivity() {
                         }.also(::startActivity)
                     }
                 }
+            }
+        }
+
+        mainViewModel.gitUserLiveData.observe(this) { gitUser: GitUser? ->
+            gitUserTextView.text = gitUser.toString()
+        }
+
+        loadGitUser.setOnClickListener {
+            lifecycleScope.launch {
+                mainViewModel.loadGitUsers()
             }
         }
     }

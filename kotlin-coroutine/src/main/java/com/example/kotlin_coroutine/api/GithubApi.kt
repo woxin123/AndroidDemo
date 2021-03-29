@@ -10,7 +10,7 @@ import timber.log.Timber
 
 data class GitUser(val id: String, val name: String, val url: String)
 
-val githubApi by lazy {
+val gitHubServiceApi by lazy {
     val retrofit = Retrofit.Builder()
         .client(OkHttpClient.Builder().addInterceptor {
             it.proceed(it.request()).apply {
@@ -21,10 +21,10 @@ val githubApi by lazy {
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
-    retrofit.create(GithubServiceApi::class.java)
+    retrofit.create(GitHubServiceApi::class.java)
 }
 
-interface GithubServiceApi {
+interface GitHubServiceApi {
 
     @GET("users/{login}")
     fun getUserCallback(@Path("login") login: String): Call<GitUser>
