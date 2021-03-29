@@ -3,12 +3,15 @@ package com.example.kotlin_coroutine.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.observe
 import com.example.kotlin_coroutine.R
 import com.example.kotlin_coroutine.api.GitUser
+import com.example.kotlin_coroutine.db.User
 import com.example.kotlin_coroutine.download.DownloadStatus
 import com.example.kotlin_coroutine.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,6 +25,10 @@ import splitties.alertdialog.appcompat.message
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel: MainViewModel by viewModels()
+
+    private val listAdapter by lazy {
+        ArrayAdapter<User>(this, android.R.layout.simple_list_item_1)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,6 +92,24 @@ class MainActivity : AppCompatActivity() {
                         }.also(::startActivity)
                     }
                 }
+            }
+        }
+
+        userListView.adapter = listAdapter
+        mainViewModel.userLiveData.observe(this) { users ->
+            listAdapter.clear()
+            users?.let {
+                userListView.visibility = View.VISIBLE
+                listAdapter.addAll(it)
+            } ?: run {
+                userListView.visibility = View.GONE
+            }
+
+        }
+
+        loadUserFromDb.setOnClickListener {
+            lifecycleScope.launch {
+                mainViewModel.loadUsers()
             }
         }
 

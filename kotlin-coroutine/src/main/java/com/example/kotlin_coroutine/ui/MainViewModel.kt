@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.kotlin_coroutine.api.GitUser
 import com.example.kotlin_coroutine.api.gitHubServiceApi
+import com.example.kotlin_coroutine.db.Db
+import com.example.kotlin_coroutine.db.User
 import com.example.kotlin_coroutine.download.DownloadManager
 import com.example.kotlin_coroutine.download.DownloadManagerRx
 import com.example.kotlin_coroutine.download.DownloadStatus
@@ -32,6 +34,8 @@ class MainViewModel : ViewModel() {
     val downloadStatusLiveData = MutableLiveData<DownloadStatus>(DownloadStatus.None)
 
     val gitUserLiveData = MutableLiveData<GitUser>()
+
+    val userLiveData = MutableLiveData<List<User>>()
 
     private val isUseCoroutine = true
 
@@ -96,5 +100,9 @@ class MainViewModel : ViewModel() {
             })
         }.await()
 
+    }
+
+    suspend fun loadUsers() {
+        userLiveData.value = Db.userDao.listUsers()
     }
 }

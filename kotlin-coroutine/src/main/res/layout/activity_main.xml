@@ -24,11 +24,17 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/usersListView"
+            android:id="@+id/loadUserFromDb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Load Users"
             android:textAllCaps="false" />
+
+        <ListView
+            android:id="@+id/userListView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/loadGitUser"
@@ -36,12 +42,6 @@
             android:layout_height="wrap_content"
             android:text="Load Git User"
             android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/userListView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:visibility="gone" />
 
         <TextView
             android:id="@+id/gitUserTextView"
