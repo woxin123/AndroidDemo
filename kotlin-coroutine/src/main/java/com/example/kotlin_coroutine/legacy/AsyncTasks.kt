@@ -51,6 +51,27 @@ class CallbackAsyncTask<P, R>(
 
 }
 
+class ImageAsyncTaskWithCallback(
+    private val onProgress: ((Int) -> Unit)? = null,
+    private val onComplete: ((Bitmap) -> Unit)? = null
+) : AsyncTask<String, Int, List<Bitmap>>() {
+
+    override fun doInBackground(vararg params: String): List<Bitmap> {
+        return params.mapIndexed { index, url ->
+            publishProgress(index * 100 / params.size)
+            ImageManager.getBitmapSync(url)
+        }.also { publishProgress(100) }
+    }
+
+    override fun onPostExecute(result: List<Bitmap>) {
+        onComplete?.let(result::forEach)
+    }
+
+    override fun onProgressUpdate(vararg values: Int?) {
+        values[0]?.let { onProgress?.invoke(it) }
+    }
+}
+
 object ImageManager {
     fun getBitmapSync(url: String): Bitmap {
         return download(url)

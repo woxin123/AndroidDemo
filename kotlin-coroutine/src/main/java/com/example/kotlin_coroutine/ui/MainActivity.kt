@@ -9,10 +9,15 @@ import androidx.activity.viewModels
 import androidx.core.content.FileProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.observe
+import coil.ImageLoader
+import coil.api.load
+import coil.decode.SvgDecoder
 import com.example.kotlin_coroutine.R
 import com.example.kotlin_coroutine.api.GitUser
 import com.example.kotlin_coroutine.db.User
 import com.example.kotlin_coroutine.download.DownloadStatus
+import com.example.kotlin_coroutine.legacy.ImageAsyncTask
+import com.example.kotlin_coroutine.legacy.ImageAsyncTaskWithCallback
 import com.example.kotlin_coroutine.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -28,6 +33,14 @@ class MainActivity : AppCompatActivity() {
 
     private val listAdapter by lazy {
         ArrayAdapter<User>(this, android.R.layout.simple_list_item_1)
+    }
+
+    private val imageLoader by lazy {
+        ImageLoader(this) {
+            componentRegistry {
+                add(SvgDecoder(this@MainActivity))
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -121,6 +134,21 @@ class MainActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 mainViewModel.loadGitUsers()
             }
+        }
+
+        loadImageButton.setOnClickListener {
+            lifecycleScope.launch {
+                logoView.load(
+                    "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3950890774,2925186961&fm=26&gp=0.jpg",
+                    imageLoader
+                ).await()
+            }
+        }
+
+        loadImage2Button.setOnClickListener {
+            ImageAsyncTaskWithCallback(onComplete = { bitmap ->
+                logoView.setImageBitmap(bitmap)
+            }).execute("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1257261576,679557898&fm=26&gp=0.jpg")
         }
     }
 }

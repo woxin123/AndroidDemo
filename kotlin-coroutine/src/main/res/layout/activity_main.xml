@@ -63,6 +63,7 @@
             android:textAllCaps="false" />
 
         <ImageButton
+            android:id="@+id/logoView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
