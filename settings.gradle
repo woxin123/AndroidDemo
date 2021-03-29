@@ -1,3 +1,4 @@
+include ':kotlin-coroutine'
 include ':app'
 rootProject.name='AndroidDemo'
 include ':store'
