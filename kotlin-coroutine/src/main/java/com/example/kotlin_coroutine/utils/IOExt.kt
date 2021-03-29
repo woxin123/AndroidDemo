@@ -5,6 +5,7 @@ import java.io.OutputStream
 
 inline fun InputStream.copyTo(out: OutputStream, bufferSize: Int = DEFAULT_BUFFER_SIZE, progress: (Long) -> Unit): Long {
     var bytesCopied = 0L
+    val bufferSize = 200
     val buffer = ByteArray(bufferSize)
     var bytes = read(buffer)
     while (bytes >= 0) {

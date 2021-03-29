@@ -28,6 +28,7 @@ object DownloadManagerRx {
                         val input = body.byteStream()
                         var emitterProgress = 0L
                         input.copyTo(output) { bytesCopied ->
+                            Timber.d("bytesCopied = ${bytesCopied}")
                             val progress = bytesCopied * 100 / total
                             if (progress - emitterProgress > 5) {
                                 Timber.d("new progress: $progress")
@@ -35,16 +36,16 @@ object DownloadManagerRx {
                                 it.onNext(DownloadStatus.Progress(progress.toInt()))
                                 emitterProgress = progress
                             }
-                            input.close()
                         }
-                        it.onNext(DownloadStatus.Done(file))
+                        input.close()
                     }
+                    it.onNext(DownloadStatus.Done(file))
                 }
             } else {
                 throw HttpException(response)
             }
             it.onComplete()
-        }, BackpressureStrategy.LATEST).onErrorReturn {
+        }, BackpressureStrategy.BUFFER).onErrorReturn {
             file.delete()
             DownloadStatus.Error(it)
         }
