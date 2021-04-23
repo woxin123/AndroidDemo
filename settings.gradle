@@ -1,4 +1,5 @@
 include ':custom_view'
+include ':kotlin-coroutine'
 include ':app'
 rootProject.name='AndroidDemo'
 include ':store'
