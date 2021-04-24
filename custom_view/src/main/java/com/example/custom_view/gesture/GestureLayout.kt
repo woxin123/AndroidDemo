@@ -3,6 +3,7 @@ package com.example.custom_view.gesture
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -17,18 +18,24 @@ class GestureLayout @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : FrameLayout(context, attrs, defStyle) {
+
+    companion object {
+        private val TAG = "GestureLayout"
+    }
     
     private val gestureListener = object : GestureDetector.OnGestureListener {
         override fun onShowPress(e: MotionEvent?) {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onShowPress")
         }
 
         override fun onSingleTapUp(e: MotionEvent?): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onSingleTapUp")
+            return true
         }
 
         override fun onDown(e: MotionEvent?): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onDown")
+            return true
         }
 
         override fun onFling(
@@ -37,7 +44,8 @@ class GestureLayout @JvmOverloads constructor(
             velocityX: Float,
             velocityY: Float
         ): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onFling")
+            return true
         }
 
         override fun onScroll(
@@ -46,25 +54,29 @@ class GestureLayout @JvmOverloads constructor(
             distanceX: Float,
             distanceY: Float
         ): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onScroll")
+            return true
         }
 
         override fun onLongPress(e: MotionEvent?) {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onLongPress")
         }
     }
     
     private val onDoubleTapListener = object : GestureDetector.OnDoubleTapListener {
         override fun onDoubleTap(e: MotionEvent?): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onDoubleTap")
+            return true
         }
 
         override fun onDoubleTapEvent(e: MotionEvent?): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onDoubleTapEvent")
+            return true
         }
 
         override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
-            TODO("Not yet implemented")
+            Log.d(TAG, "onSingleTapConfirmed")
+            return true
         }
 
     }
