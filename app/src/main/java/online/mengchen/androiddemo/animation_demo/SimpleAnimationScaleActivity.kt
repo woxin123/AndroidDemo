@@ -1,16 +1,18 @@
 package online.mengchen.androiddemo.animation_demo
 
-import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
+import android.animation.*
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.LinearInterpolator
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import online.mengchen.androiddemo.R
 
 class SimpleAnimationScaleActivity: AppCompatActivity() {
+    
+    companion object {
+        private const val TAG = "SimpleAnimationScale"
+    }
 
     private lateinit var imageView: ImageView
 
@@ -36,6 +38,29 @@ class SimpleAnimationScaleActivity: AppCompatActivity() {
 
         // xml 实现
         val animator = AnimatorInflater.loadAnimator(this, R.animator.scale_animator)
+        animator.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {
+                Log.d(TAG, "onAnimationRepeat")
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                Log.d(TAG, "onAnimationEnd")
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                Log.d(TAG, "onAnimationCancel")
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+                Log.d(TAG, "onAnimationStart")
+            }
+
+        })
+        animator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                super.onAnimationEnd(animation)
+            }
+        })
         animator.setTarget(imageView)
         animator.start()
 

@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
-import android.view.View
 import android.widget.FrameLayout
 
 /**
@@ -20,7 +19,7 @@ class GestureLayout @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyle) {
 
     companion object {
-        private val TAG = "GestureLayout"
+        private const val TAG = "GestureLayout"
     }
     
     private val gestureListener = object : GestureDetector.OnGestureListener {

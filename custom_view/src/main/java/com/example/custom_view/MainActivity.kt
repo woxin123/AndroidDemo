@@ -11,11 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.custom_view.common.CustomView
 import com.example.custom_view.common.CustomViewActivity
+import com.example.custom_view.gesture.GestureImageViewTest
 import com.example.custom_view.gesture.GestureLayoutTest
+import com.example.custom_view.lazypageradapter.LazyViewPagerTest
+import java.io.Serializable
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Serializable {
 
-    private val customViewData = mutableListOf<CustomView>()
+    companion object {
+        val customViewData = mutableListOf<CustomView>()
+    }
 
     private val recyclerView by lazy { findViewById<RecyclerView>(R.id.recyclerView) }
 
@@ -27,7 +32,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData() {
-        customViewData.add(GestureLayoutTest())
+        customViewData.apply { 
+            add(GestureLayoutTest())
+            add(GestureImageViewTest())
+            add(LazyViewPagerTest())
+        }
     }
 
     private fun initView() {
@@ -45,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 holder.button.setOnClickListener {
                     startActivity(Intent(this@MainActivity, CustomViewActivity::class.java).apply {
                         putExtras(Bundle().apply {
-                            putSerializable("custom_view", customViewData[position])
+                            putSerializable("custom_view_index", position)
                         })
                     })
                 }

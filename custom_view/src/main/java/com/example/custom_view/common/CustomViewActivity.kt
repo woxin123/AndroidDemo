@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.TextView
+import com.example.custom_view.MainActivity
 import com.example.custom_view.R
 
 class CustomViewActivity : AppCompatActivity() {
@@ -15,11 +16,15 @@ class CustomViewActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val customView = intent.getSerializableExtra("custom_view") as CustomView
+        val customViewData = intent.getIntExtra("custom_view_index", 0).let { 
+            MainActivity.customViewData[it]
+        }
         val customViewTextView = findViewById<TextView>(R.id.custom_view_name)
         val customViewFrameLayout = findViewById<FrameLayout>(R.id.custom_view)
-        customViewTextView.text = customView.customViewName
-        customViewFrameLayout.addView(LayoutInflater.from(this).inflate(customView.customViewLayout,
-            findViewById(R.id.rootView), false))
+        customViewTextView.text = customViewData.customViewName
+        val customView = LayoutInflater.from(this).inflate(customViewData.customViewLayout,
+            findViewById(R.id.rootView), false)
+        customViewFrameLayout.addView(customView)
+        customViewData.initCustomView(customView, this)
     }
 }
