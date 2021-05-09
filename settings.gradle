@@ -1,3 +1,4 @@
+include ':jetpack:jetpack-compose'
 include ':common_utils'
 include ':custom_view'
 include ':kotlin-coroutine'
