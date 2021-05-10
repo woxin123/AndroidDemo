@@ -2,6 +2,7 @@ package com.example.jetpack_compose
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Space
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -28,24 +29,35 @@ class MainActivity : AppCompatActivity() {
 //                Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show()
 //            }
 //            AlignInRow()
+//            Column {
+//                PaddedComposeable()
+//                Spacer(Modifier.height(20.dp))
+//                SizedComposable()
+//                Spacer(Modifier.height(20.dp))
+//                FixedSizeComposable()
+//                Spacer(Modifier.height(20.dp))
+//                FillSizeComposable()
+//                Spacer(Modifier.height(20.dp))
+//                MatchParentSizeComposable()
+//                Spacer(Modifier.height(20.dp))
+//                TextWithPaddingFromBaseline()
+//                Spacer(Modifier.height(20.dp))
+//                OffsetComposable()
+//                Spacer(Modifier.height(20.dp))
+//                FlexdComposable()
+//                Spacer(Modifier.height(20.dp))
+//                WithConstraintsComposable()
+//        }
+//            HomeScreen()
             Column {
-                PaddedComposeable()
-                Spacer(Modifier.height(20.dp))
-                SizedComposable()
-                Spacer(Modifier.height(20.dp))
-                FixedSizeComposable()
-                Spacer(Modifier.height(20.dp))
-                FillSizeComposable()
-                Spacer(Modifier.height(20.dp))
-                MatchParentSizeComposable()
-                Spacer(Modifier.height(20.dp))
-                TextWithPaddingFromBaseline()
-                Spacer(Modifier.height(20.dp))
-                OffsetComposable()
+//                ConstraintLayoutContent()
+//                Spacer(Modifier.height(20.dp))
+                DecoupledConstraintLayout()
             }
         }
     }
 }
+
 
 @Composable
 fun NewStory() {

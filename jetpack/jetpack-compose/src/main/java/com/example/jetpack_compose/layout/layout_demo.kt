@@ -1,26 +1,24 @@
 package com.example.jetpack_compose.layout
 
-import android.graphics.drawable.shapes.RoundRectShape
-import android.graphics.drawable.shapes.Shape
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Shapes
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.ConstraintSet
 import com.example.jetpack_compose.R
 
 @Composable
@@ -129,5 +127,99 @@ fun OffsetComposable() {
             "Layout offset modifier sample",
             Modifier.offset(x = 15.dp, y = 20.dp)
         )
+    }
+}
+
+// 自适应布局
+@Composable
+fun FlexdComposable() {
+    Row(Modifier.width(210.dp)) {
+        Box(Modifier.weight(2F).height(50.dp).background(Color.Blue))
+        Box(Modifier.weight(1F).height(50.dp).background(Color.Red))
+    }
+}
+
+// 约束条件
+@Composable
+fun WithConstraintsComposable() {
+    BoxWithConstraints {
+        Text("My minHeight is $minHeight while my maxWidth is $maxWidth")
+    }
+}
+
+// 基于槽位的布局
+@Composable
+fun HomeScreen() {
+    Scaffold(
+        drawerContent = {
+            Text("Hello World!")
+        },
+        topBar = {
+            Text("Hello Compose")
+        },
+        content = {
+            Image(
+                painter = painterResource(R.drawable.header),
+                modifier = Modifier.padding(5.dp),
+                contentDescription = null,
+            )
+        }
+    )
+}
+
+// ConstraintLayout
+@Composable
+fun ConstraintLayoutContent() {
+    ConstraintLayout {
+        // Create reference for the composables to constrain
+        val (button, text) = createRefs()
+
+        Button(
+            onClick = { // Do something
+            },
+            modifier = Modifier.constrainAs(button) {
+                top.linkTo(parent.top, margin = 16.dp)
+            }
+        ) {
+            Text("Button")
+        }
+        Text("Text", Modifier.constrainAs(text) {
+            top.linkTo(button.bottom, margin = 16.dp)
+        })
+    }
+}
+
+@Composable
+fun DecoupledConstraintLayout() {
+    BoxWithConstraints {
+        val constraints = if (minWidth < 600.dp) {
+            decoupledConstraints(margin = 16.dp)
+        } else {
+            decoupledConstraints(margin = 32.dp)
+        }
+        ConstraintLayout(constraints) {
+            Button(
+                onClick = {},
+                modifier = Modifier.layoutId("button")
+            ) {
+                Text("Button")
+            }
+            Text("Text", Modifier.layoutId("text"))
+        }
+    }
+}
+
+private fun decoupledConstraints(margin: Dp): ConstraintSet {
+    return ConstraintSet {
+        val button = createRefFor("button")
+        val text = createRefFor("text")
+
+        constrain(button) {
+            top.linkTo(parent.top, margin = margin)
+        }
+
+        constrain(text) {
+            top.linkTo(button.bottom, margin)
+        }
     }
 }
