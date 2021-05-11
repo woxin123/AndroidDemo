@@ -24,6 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.jetpack_compose.layout.DecoupledConstraintLayout
+import com.example.jetpack_compose.layout.PartiallySelectableText
+import com.example.jetpack_compose.layout.SelectableText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +59,9 @@ class MainActivity : AppCompatActivity() {
             Column {
 //                ConstraintLayoutContent()
 //                Spacer(Modifier.height(20.dp))
-                DecoupledConstraintLayout()
+//                DecoupledConstraintLayout()
+                SelectableText()
+                PartiallySelectableText()
             }
         }
     }

@@ -2,6 +2,8 @@ package com.example.jetpack_compose.layout
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.selection.DisableSelection
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +17,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -106,3 +109,40 @@ fun ParagraphStyle() {
     })
 }
 
+@Preview(showBackground = true)
+@Composable
+fun LongText() {
+    Text("hello".repeat(50), maxLines = 2)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun OverflowedText() {
+    Text("Hello Compose".repeat(50), maxLines = 2, overflow = TextOverflow.Ellipsis)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SelectableText() {
+    SelectionContainer {
+        Text("This text is selectable")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PartiallySelectableText() {
+    SelectionContainer {
+        Column {
+            Text("This text is selectable")
+            Text("This one too")
+            Text("This one as well")
+            DisableSelection {
+                Text("But not this one")
+                Text("Neither this one")
+            }
+            Text("But again, you can select this one")
+            Text("And this one too")
+        }
+    }
+}
