@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.example.jetpack_compose.layout.DecoupledConstraintLayout
 import com.example.jetpack_compose.layout.PartiallySelectableText
 import com.example.jetpack_compose.layout.SelectableText
+import com.example.jetpack_compose.layout.SimpleClickableText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 //                DecoupledConstraintLayout()
                 SelectableText()
                 PartiallySelectableText()
+                SimpleClickableText()
             }
         }
     }
